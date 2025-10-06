@@ -5,6 +5,7 @@ steps:
       - '-t'
       - 'us-central1-docker.pkg.dev/$PROJECT_ID/adarsh-100998244-registry/app:$COMMIT_SHA'
       - '.'
+    dir: 'src'
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
