@@ -9,6 +9,16 @@ steps:
     args:
       - 'push'
       - 'us-central1-docker.pkg.dev/$PROJECT_ID/adarsh-100998244-registry/app:$COMMIT_SHA'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+    - 'run'
+    - 'deploy'
+    - 'app'
+    - '--image'
+    - 'us-central1-docker.pkg.dev/$PROJECT_ID/adarsh-100998244-registry/app:$COMMIT_SHA'
+    - '--region'
+    - 'us-central1'
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/adarsh-100998244-registry/app:$COMMIT_SHA'
 options:
