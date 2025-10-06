@@ -22,7 +22,7 @@ COPY . .
 FROM node:18-alpine
 
 # Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copy everything from the build step
 COPY --from=build /app .
